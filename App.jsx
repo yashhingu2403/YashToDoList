@@ -1,9 +1,3 @@
-/**
- * My To Do List App
- *
- * @format
- */
-
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native';
 import ToDoList from './components/ToDoList';
@@ -15,15 +9,17 @@ function App() {
     'Go to gym',
     'Walk dog'
   ]);
+  
+  const addTask = (taskText) => {
+    setTasks([...tasks, taskText]);
+  };
+  
   return (
     <SafeAreaView>
       <ToDoList tasks={tasks}/>
-      <ToDoForm/>
+      <ToDoForm addTask={addTask}/>
     </SafeAreaView>
   );
 }
 
 export default App;
-
-
-
